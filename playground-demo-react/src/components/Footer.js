@@ -7,8 +7,11 @@ import { Dropdown } from '@govtechsg/sgds-react'
 import { NavDropdown, Nav } from '@govtechsg/sgds-react/Nav'
 import { DropdownButton, Navbar } from '@govtechsg/sgds-react'
 import userIcon from '../img/default_user_icon.jpg'
+import { useMediaQuery } from 'react-responsive'
 
 export default function Footer(){
+    const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
+    const isDesktop = useMediaQuery({ query: '(min-width: 1224px)' })
     console.log("Footer")
     return(
         <footer className="sgds footer">
@@ -28,7 +31,7 @@ export default function Footer(){
                     </div>
                     </div>
                     <div className="row footer-items">
-                    <div className="col-lg-3">
+                    <div className={isTabletOrMobile ? 'col-12' : 'col-lg-3'}>
                         <div className="title">Column 1</div>
                         <ul className="links">
                         <li><a href="">About Us</a></li>
@@ -37,7 +40,7 @@ export default function Footer(){
                         <li><a href="">Test</a></li>
                         </ul>
                     </div>
-                    <div className="col-lg-3">
+                    <div className={isTabletOrMobile ? 'col-12' : 'col-lg-3'}>
                         <div className="title">Category 1</div>
                         <ul className="links">
                         <li><a href="">About Us</a></li>
@@ -46,7 +49,7 @@ export default function Footer(){
                         <li><a href="">Test</a></li>
                         </ul>
                     </div>
-                    <div className="col-lg-3">
+                    <div className={isTabletOrMobile ? 'col-12' : 'col-lg-3'}>
                         <div className="title">Category 1</div>
                         <ul className="links">
                         <li><a href="">About Us</a></li>

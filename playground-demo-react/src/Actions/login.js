@@ -1,11 +1,12 @@
 import { loginService } from "../Services/LoginService";
+import { LOGIN_SUCCESS, LOGIN_FAIL, SET_MESSAGE } from "../constants";
 
 export const login = (email, password) => (dispatch) => {
     return loginService(email, password).then(
       (data) => {
         console.log("dispatching login success")
         dispatch({
-          type: "LOGIN_SUCCESS",
+          type: LOGIN_SUCCESS,
           payload: { user: data },
         });
   
@@ -20,12 +21,12 @@ export const login = (email, password) => (dispatch) => {
             error.toString();
         console.log("dispatching login fail")
         dispatch({
-          type: "LOGIN_FAIL",
+          type: LOGIN_FAIL,
         });
         
         console.log("dispatching message")
         dispatch({
-          type: "SET_MESSAGE",
+          type: SET_MESSAGE,
           payload: message,
         });
   

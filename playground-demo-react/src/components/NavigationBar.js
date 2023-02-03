@@ -7,20 +7,36 @@ import { Dropdown } from '@govtechsg/sgds-react'
 import { NavDropdown, Nav } from '@govtechsg/sgds-react/Nav'
 import { DropdownButton, Navbar } from '@govtechsg/sgds-react'
 import userIcon from '../img/default_user_icon.jpg'
-import wizIcon from '../img/wiz.png'
+import wizIcon from '../img/IEMSimTM.png'
+import { useMediaQuery } from 'react-responsive'
 
 export default function NavigationBar(){
+    const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
+    const isDesktop = useMediaQuery({ query: '(min-width: 1224px)' })
     const userProfileIcon = (
-        <a className="nav-link dropdown-toggle" href="#" id="userDropdown">
-            <span className="mr-2 d-none d-lg-inline small"
-                style={{
-                    "color": "white",
-                    "border-color": "transparent"
-                }}
+        <a 
+        //className="nav-link dropdown-toggle" 
+        className="navigation-bar-profile"
+        href="#" 
+        id="userDropdown">
+            <span 
+            //className="mr-2 d-none d-lg-inline small"
+                className="navigation-bar-profile-name"
+                // style={{
+                //     "color": "white",
+                //     "border-color": "transparent"
+                // }}
             > Julius Caesar 
             </span>
-            <img className="img-profile rounded-circle"
-                src={userIcon} alt="..." style={{"height": "2rem", "width": "2rem", "margin-left": "auto", "display":"flex"}}/>
+            <img 
+            className="navigation-bar-profile-pic"
+                src={userIcon} alt="..." 
+                // style={{
+                //     "height": "2rem", 
+                //     "width": "2rem", 
+                //     "margin-left": "auto", 
+                //     "display":"flex"}}
+                />
         </a>
     )
     console.log("hmm")
@@ -28,21 +44,19 @@ export default function NavigationBar(){
     const [activeTab, setActiveTab] = useState(1);
     return(
         <div
-            style={{
-                "margin-bottom": "50px"
-            }}
         >
             <Nav 
                 defaultActiveKey={"link-0"}
                 style = {{
-                    "background-color": "#5952dc"
+                    "background-color": "#5925DC"
                 }}
             >
                 <Navbar 
-                    className="mt-3 mb-1 sgds navbar navbar-expand-lg"
-                    style = {{
-                        "width": "200vh"
-                    }}
+                    //className="mt-3 mb-1 sgds navbar navbar-expand-lg"
+                    className="navigation-bar"
+                    // style = {{
+                    //     "width": "200vh"
+                    // }}
                 >
                     <div 
                         style={{
@@ -56,7 +70,7 @@ export default function NavigationBar(){
                                 src= {wizIcon}
                                 alt="Home"
                                 style = {{
-                                    "height" : "6vh"
+                                    "height" : isTabletOrMobile ? "3vh" : "9vh"
                                 }}
                                 />
                             </a>
@@ -78,7 +92,7 @@ export default function NavigationBar(){
                                             "border-color": "transparent",
                                             "border-bottom-color": activeTab === 1 ? "white": "",
                                             "border-bottom-width": activeTab === 1 ? "2px": "",
-                                            "background-color": "#5952dc",
+                                            "background-color": "#5925DC",
                                             "color": "white"
                                         }}
                                         onClick = { (e) => setActiveTab(1)}
@@ -91,7 +105,7 @@ export default function NavigationBar(){
                                             "border-color": "transparent",
                                             "border-bottom-color": activeTab === 2 ? "white": "",
                                             "border-bottom-width": activeTab === 2 ? "2px": "",
-                                            "background-color": "#5952dc",
+                                            "background-color": "#5925DC",
                                             "color": "white"
                                         }}
                                         onClick = { (e) => setActiveTab(2)}

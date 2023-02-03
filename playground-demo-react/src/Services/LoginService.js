@@ -10,9 +10,6 @@ export const loginService = async (email, password) => {
             password,
         });
     console.log(response);
-    if (response.status === 200) {
-        localStorage.setItem("user", JSON.stringify(response.data));
-    }
     return response.data;
   };
   

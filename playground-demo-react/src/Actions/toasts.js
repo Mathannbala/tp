@@ -1,9 +1,8 @@
-export const clearNotification = () => (dispatch) => {
-    console.log("ACTION -- clearNotification")
+export const clearNotification = (id) => (dispatch) => {
     dispatch({
       type: "CLEAR_NOTIFICATION",
       payload: {
-        status: true
+        index: id
       }  
     });
   }

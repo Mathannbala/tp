@@ -1,43 +1,595 @@
-#userProfileIcon{
-    background-color: transparent;
-    border-color: transparent;
+#userProfileIcon {
+  background-color: transparent;
+  border-color: transparent;
 }
 
-div.dropdown-divider{
-    border-top-color:#858796;
+div.dropdown-divider {
+  border-top-color: #858796;
 }
 
-#navbarDropdown{
-    background-color: transparent;
-    border-color: transparent;
-    color: black;
+#navbarDropdown {
+  background-color: transparent;
+  border-color: transparent;
+  color: black;
 }
 
-a#nav-dropdown:hover{
-    border-color: transparent;
-    border-bottom-color: "#5925dc";
-    
+a#nav-dropdown:hover {
+  border-color: transparent;
+  border-bottom-color: "#5925dc";
 }
 
 .sidebar {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 100;
-    padding: 48px 0 0;
-    width:300px;
-    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  padding: 48px 0 0;
+  width: 300px;
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1);
 }
-/* #sidebar-wrapper{
-    width: 200px;
-    margin-left: -1rem;
-    -webkit-transition: margin .25s ease-out;
-    -moz-transition: margin .25s ease-out;
-    -o-transition: margin .25s ease-out;
-    transition: margin .25s ease-out;
+
+.modal-dialog.modal-fullscreen {
+  max-width: 100%;
+  max-height: 90%;
+  margin-left: 10vh;
+  margin-right: 10vh;
 }
-#sidebar-wrapper .sidebar-heading {
-    padding: 0.875rem 1.25rem;
-    font-size: 1.2rem;
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+/* EXAMPLE for designing */
+/* Desktop styles */
+@media (min-width: 600px) 
+{
+  .container {
+    width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 600px)
+{
+  .container {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+/*#region LANDING CSS*/
+.landing{
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  display: inline-flex;
+  color:black;
+}
+
+.landing-middle{
+width: 180vh;
+height: 100%;
+margin-top: 15vh;
+}
+
+.landing-right-col{
+margin-top: 4rem;
+width: 40vh !important;
+border: 4px solid lightgrey;
+border-radius: 15px;
+padding: 25px;
+overflow-y: auto;
+
+
+}
+/*#endregion LANDING CSS*/
+
+/*#region FORMS CSS*/
+.forms{
+  justify-content: center;
+  align-items: center;
+  color: black;
+}
+
+.select-project-header{
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -0.75rem;
+  margin-left: -0.75rem;
+  margin-bottom: 2.5rem!important;
+  --sgds-gutter-x: 1.5rem;
+  --sgds-gutter-y: 0;
+  box-sizing: border-box;
+
+  flex-shrink: 0;
+  margin-top: var(--sgds-gutter-y);
+  max-width: 100%;
+  padding-left: calc(var(--sgds-gutter-x)*.5);
+  padding-right: calc(var(--sgds-gutter-x)*.5);
+  width: 100%;
+
+  font-weight: 400;
+  line-height: 1.2;
+  font-size: 1.25rem;
+}
+/*#endregion FORMS CSS*/
+
+/*#region NAVIGATION BAR CSS*/
+.navigation-bar{
+  width: 200vh;
+  align-items: stretch;
+  min-height: 80px;
+  padding: 0 2rem;
+  margin-top: 1rem!important;
+  margin-bottom: 0.25rem!important;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  position: relative;
+  display: flex;
+  box-sizing: border-box;
+}
+
+.navigation-bar-profile{
+  align-items: center;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: space-between;
+  margin-bottom: -1px;
+  border: 1px solid transparent;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  background: none;
+  padding: 1rem 1rem;
+  white-space: nowrap;
+  transition: none;
+}
+
+.navigation-bar-profile-name{
+  color: white;
+  border-color: transparent;
+}
+
+.navigation-bar-profile-pic{
+  height: 2rem;
+  width: 2rem;
+  margin-left: auto;
+  display: flex;
+  border-radius: 50%!important;
+  vertical-align: middle;
+  border-style: none;
+  box-sizing: border-box;
+  overflow: clip;
+  height: 2rem;
+  width: 2rem;
+  margin-left: auto;
+  display:flex;
+}
+
+/*#endregion NAVIGATION BAR CSS*/
+
+/*#region UPLOAD STL FILES BUTTONS*/
+.selectButtonIcon {
+  background-image: url("../img/select.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left center;
+  width: 65px;
+  height: 20px;
+  display:inline-block;
+  text-align-last: right;
+  text-shadow: 0px 0px 10px #aaa;
+}
+
+.deleteButtonIcon {
+  background-image: url("../img/bin.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left center;
+  width: 65px;
+  height: 20px;
+  display:inline-block;
+  text-align-last: right;
+  text-shadow: 0px 0px 10px #aaa;
+}
+
+.selectButton {
+  -moz-appearance: none;
+  display: inline-block;
+  font-size: 15px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  opacity: 1;
+  transition: 0.1s;
+  color: #fff;
+  background-color: linear-gradient(135deg, #5925DC 40%, #ECE6FB);
+  border: 2px solid #5925dc;
+  border-radius: 10px;
+  box-shadow: 0 5px #999;
+}
+
+.selectButton:active {
+  -moz-appearance: none;
+  background-color: #ECE6FB;
+  transform: translateY(2px);
+  box-shadow: 0 1px #999;
+}
+
+.selectButton:hover {
+  background-color: #5925DC;
+  opacity: 1
+}
+
+#customSelectButton{
+  width: 8em;
+  background-color: #5925DC;
+  border-color: #ECE6FB;
+}
+
+#customSelectButton:hover {
+  -moz-appearance: none;
+  background-color: #39178E;
+  transform: translateY(2px);
+  box-shadow: 0 1px #999;
+}
+
+#customSelectButton:active{
+  background-color: #ECE6FB;
+  transform: translateY(2px);
+  box-shadow: 0 1px #999;
+}
+
+#customDeleteButton{
+  width: 8em;
+  background-color: #D7260F;
+  border-color: #ECE6FB;
+}
+
+#customDeleteButton:active{
+  -moz-appearance: none;
+  background-color: #FB7463;
+  transform: translateY(2px);
+  box-shadow: 0 1px #999;
+}
+
+#customDeleteButton:hover {
+  -moz-appearance: none;
+  background-color: #D7260F;
+  transform: translateY(2px);
+  box-shadow: 0 1px #999;
+}
+
+.deleteButton {
+  -moz-appearance: none;
+  display: inline-block;
+  font-size: 15px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  opacity: 0.6;
+  transition: 0.1s;
+  color: #fff;
+  background-color: #FB7463;
+  border: 2px solid #D7260F;
+  border-radius: 10px;
+  box-shadow: 0 5px #999;
+}
+
+.deleteButton:active {
+  -moz-appearance: none;
+  background-color: #FB7463;
+  transform: translateY(2px);
+  box-shadow: 0 1px #999;
+}
+
+.deleteButton:hover {
+  background-color: #D7260F;
+  opacity: 1
+}
+/*#endregion UPLOAD STL FILES BUTTONS*/
+
+/*#region CTA BUTTONS*/
+.cta-button{
+  margin-top: 15vh !important;
+  margin-left: 3rem!important;
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -0.75rem;
+  --sgds-gutter-x: 1.5rem;
+  --sgds-gutter-y: 0;
+  box-sizing: border-box;
+}
+
+.fullscreenButton {
+  -moz-appearance: none;
+  font-size: 15px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  opacity: 1;
+  transition: 0.1s;
+  color: #fff;
+  background-color: #004FF0;
+  border: 2px solid #004FF0;
+  border-radius: 5px;
+  box-shadow: 0 1px #999;
+  float: right;
+}
+
+.saveConfigButton {
+  -moz-appearance: none;
+  font-size: 15px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  opacity: 1;
+  transition: 0.1s;
+  color: #fff;
+  background-color: #0A8217;
+  border: 2px solid #0A8217;
+  border-radius: 5px;
+  box-shadow: 0 1px #999;
+  float: right;
+}
+
+.deleteVTKButton {
+  -moz-appearance: none;
+  font-size: 15px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  opacity: 1;
+  transition: 0.1s;
+  color: #fff;
+  background-color: #F79009;
+  border: 2px solid #F79009;
+  border-radius: 5px;
+  box-shadow: 0 1px #999;
+  float: right;
+}
+
+.visualizeButton {
+  margin-top: 1rem!important;
+  margin-left: 0.25rem!important;
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -0.75rem;
+  --sgds-gutter-x: 1.5rem;
+  --sgds-gutter-y: 0;
+  box-sizing: border-box;
+  -moz-appearance: none;
+  width: 50vh;
+  font-size: 15px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  opacity: 1;
+  transition: 0.1s;
+  color: #fff;
+  background-color: #D7260F;
+  border: 2px solid #D7260F;
+  border-radius: 5px;
+  box-shadow: 0 1px #999;
+  float: right;
+}
+/*#endregion CTA BUTTONS*/
+
+/*#region GLOBAL CSS*/
+.nav-link:hover,
+.nav-link:hover, 
+.nav-link:focus{
+  color: #39178E;
+}
+
+.btn-primary[type=Button]{
+  background-color: #5925DC;
+  box-shadow: none !important;
+  border-color: #ECE6FB;
+  accent-color: #ECE6FB;
+}
+
+.btn-outline-secondary[type=button],
+.btn-outline-secondary:active[type=button],
+.btn-outline-secondary:focus[type=button]{
+  color: #fff;
+  background-color: #5925DC;
+  box-shadow: none !important;
+}
+
+.btn-outline-secondary:hover[type=button]{
+  background-color: #ECE6FB!important;
+  box-shadow: none !important;
+  border-color: #39178E;
+}
+
+.btn-primary:hover[type=Button], 
+.btn-primary:active[type=Button], 
+.btn-primary:focus[type=Button], 
+.btn-primary.change[type=Button],
+.btn-primary.launch[type=Button],
+.btn-primary[disabled],
+.btn-primary:not(:disabled):not(.disabled).active[type=Button],
+.btn-primary:not(:disabled):not(.disabled).active:focus[type=Button],
+.show>.btn-primary.dropdown-toggle[type=Button]
+{
+  background-color: #39178E !important;
+  border-color: #ECE6FB;
+  accent-color: #ECE6FB;
+}
+
+.form-check-input:hover[type=radio], 
+.form-check-input:focus[type=radio], 
+.form-check-input:hover[type=checkbox], 
+.form-check-input:focus[type=checkbox], 
+.form-select:hover[type=InputDropdown],
+.form-select:focus[type=InputDropdown]{
+  background-color: #ECE6FB;
+  box-shadow: none !important;
+  border-color: #39178E;
+}
+
+.form-check-input:checked[type=radio], 
+.form-check-input:checked[type=checkbox],
+.form-select:checked[type=InputDropdown]{
+  background-color: #5925DC;
+  border-color: #5925DC;
+}
+/*#endregion GLOBAL BUTTONS*/
+
+/*#region FULLSCREENPREVIEW CSS*/
+.full-screen-preview-viewer{
+  /* width: 90%; */
+  height: 98%;
+  /*display: 'inline-block';*/
+}
+/*#endregion FULLSCREENPREVIEW CSS*/
+
+.react-datepicker__time-list-item--disabled {
+  display: none;
+}
+
+.react-datepicker-popper {
+  z-index: 100 !important;
+}
+
+.react-datepicker__header,
+.react-datepicker__day--keyboard-selected,
+.react-datepicker__day--selected,
+.react-datepicker__time-list-item--selected,
+.react-datepicker__close-icon:after,
+.react-datepicker__day-name,
+.react-datepicker__current-month,
+.react-datepicker-time__header,
+.react-datepicker__navigation-icon {
+  background-color: #5925dc !important;
+  color: #fff !important;
+}
+
+.fileUploadServerForm {
+  overflow-y: "scroll";
+  min-height: "300px";
+  max-height: "300px";
+  min-width: "500px";
+  margin-left: "50px";
+}
+
+.projectNavHeader {
+  color: #5332AA;
+}
+
+.topBarHeader{
+  color: #5332AA;
+}
+
+.progress-bar {
+  background-color:#0A8217 !important;
+}
+
+.renderer {
+  border: 2px solid lightgray;
+  height: 265px;
+  width: 265px;
+  padding: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 5px;
+  background-color:#5925DC !important;
+  box-shadow: -1px 1px 2px 0px #999;
+}
+
+.progress {
+  height: 19px !important;
+}
+
+.stlFormCSS{
+  background-image: url("../img/select.png");
+  background-color: #00ff88;
+  width: "180vh";
+  height: "100%";
+  margin-top: "0";
+  border-right-color: "lightgray";
+  border-right-width: "2px";
+  border-right-style: "double";
+  border-left-color: "lightgray";
+  border-left-width: "2px";
+  border-left-style: "double";
+}
+/* 
+.ml-5{
+  width: "180vh";
+  height: "100%";
+  margin-top: "15vh";
+  border-right-color: "lightgray";
+  border-right-width: "0px";
+  border-right-style: "double";
+  border-left-color: "lightgray";
+  border-left-width: "0px";
+  border-left-style: "double";
 } */
+
+.form-control.react-date-picker__customized{
+  border-color: #e74a3b
+}
+
+.fade.toast.show{
+  z-index: -1;
+  position: relative;
+}
+
+.forms{
+    justify-content: center;
+    align-items: center;
+    color: black;
+}
+
+.upload-STL-files{
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+
+.upload-STL-window{
+    overflow-y: scroll;
+    min-height: 300px;
+    max-height: 300px;
+    min-width: 500px;
+}
+
+.dropdown{
+  margin-bottom: 1rem!important;
+  box-sizing: border-box;
+  --sgds-gutter-x: 1.5rem;
+  --sgds-gutter-y: 0;
+}
+
+@media (max-width: 600px) {
+  /* styles for smartphones*/
+  .form-check{
+  display: block!important;
+  align-items: center;
+  padding-left: 0;
+  margin-right: .75rem;
+  }
+}
+
+@media (min-width: 600px) {
+  /* styles for everything else */
+  .form-check{
+  display: inline-flex !important;
+  align-items: center;
+  padding-left: 0;
+  margin-right: .75rem;
+}
+}
+
+.accordion{
+  width:"50vw"
+}
